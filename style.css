@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #e0e0e0;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background: linear-gradient(90deg, #141e30, #243b55);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #f5a623, 0 0 20px #f5a623;
+    }
+    to {
+        text-shadow: 0 0 20px #ffb703, 0 0 30px #ffb703;
+    }
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    animation: slideIn 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+section {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+section h2 {
+    font-size: 2rem;
+    color: #e0e0e0;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+section h2:hover {
+    color: #ff7c7c;
+    transform: translateY(-5px);
+}
+
+.typing-effect {
+    font-size: 1.6rem;
+    color: #ffe66d;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite alternate;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes resetTyping {
+    0% {
+        width: 100%;
+    }
+    99% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skills span {
+    background: linear-gradient(90deg, #243b55, #141e30);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.skills span:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: linear-gradient(90deg, #141e30, #243b55);
+    color: #fff;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeInFooter 2s ease-in;
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+footer a {
+    color: #ff7c7c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffe66d;
+    text-shadow: 0 0 10px #ffe66d, 0 0 20px #ffe66d;
+}
