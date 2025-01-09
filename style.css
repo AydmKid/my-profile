@@ -179,3 +179,46 @@ footer a:hover {
     color: #ffe66d;
     text-shadow: 0 0 10px #ffe66d, 0 0 20px #ffe66d;
 }
+
+.bold-text {
+    font-weight: bold;
+}
+
+/* Animation for Image Hover */
+/* Enhanced Animation for Image Hover */
+img:hover {
+    transform: scale(2.15) rotate(5deg); /* Slight scale and rotate */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, filter 0.5s ease-in-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow effect */
+    filter: brightness(1.2) saturate(1.5); /* Add brightness and saturation for pop effect */
+}
+
+/* Add glow effect around the image */
+img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7), 0 0 30px rgba(255, 165, 0, 0.5);
+    z-index: -1; /* Keep the glow behind the image */
+    animation: glowing 1.5s infinite ease-in-out;
+}
+
+/* Glow animation */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 40px rgba(255, 165, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.3);
+    }
+}
+
+
+
