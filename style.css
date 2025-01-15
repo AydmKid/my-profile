@@ -158,6 +158,7 @@ section h2:hover {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    position: relative; /* Needed for relative positioning */
 }
 
 .skills span {
@@ -166,8 +167,10 @@ section h2:hover {
     padding: 0.7rem 1.2rem;
     border-radius: 20px;
     font-size: 1.2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     animation: pulse 2s infinite;
+    position: relative;
+    overflow: hidden; /* Ensure the pseudo-element stays within the span */
 }
 
 @keyframes pulse {
@@ -184,7 +187,30 @@ section h2:hover {
 .skills span:hover {
     transform: scale(1.2);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    background: linear-gradient(90deg, #4a90e2, #243b55);
 }
+
+/* Add a dynamic glow effect that follows the mouse */
+.skills span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+    opacity: 0.5;
+}
+
+.skills span:hover::before {
+    width: 150px;
+    height: 150px;
+}
+
 
 footer {
     text-align: center;
@@ -221,7 +247,7 @@ footer a:hover {
     font-weight: bold;
 }
 
-/* Animation for Image Hover */
+
 /* Enhanced Animation for Image Hover */
 img:hover {
     transform: scale(2.15) rotate(5deg); /* Slight scale and rotate */
