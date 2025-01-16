@@ -8,25 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<script>
-    // Get the current count from localStorage
-    const visitorCountKey = 'visitorCount';
-    let visitorCount = localStorage.getItem(visitorCountKey);
-
-    // If it's the user's first visit, initialize the count
-    if (!visitorCount) {
-        visitorCount = 1;
-    } else {
-        visitorCount = parseInt(visitorCount) + 1; // Increment the count
-    }
-
-    // Update the count in localStorage
-    localStorage.setItem(visitorCountKey, visitorCount);
-
-    // Display the visitor count
-    document.getElementById('visitor-number').textContent = visitorCount;
-</script>
-
 <body>
     <header>
         <h1>About Me</h1>
@@ -48,7 +29,7 @@
             </p>
         </section>
 
-       <section id="skills">
+        <section id="skills">
             <h2><i class="fas fa-code"></i> My Skills</h2>
             <div class="skills">
                 <span data-description="A versatile programming language widely used for scripting, web development, and data analysis.">
@@ -84,6 +65,7 @@
             </div>
         </section>
         
+        
 
         <section id="projects">
             <h2><i class="fas fa-project-diagram"></i> Summary of Projects</h2>
@@ -115,10 +97,11 @@
             </p>
         </section>
 
-<!--         <section id="visitor-count" style="color: #0370ff; text-decoration: none;">
+        <section id="visitor-count">
             <h2><i class="fas fa-users"></i> Visitors</h2>
-            <p>You are visitor number: <span id="visitor-number">0</span></p>
-        </section> -->
+            <p><span id="visitor-number">0</span></p>
+        </section>
+        
         
     </main>
 
@@ -130,7 +113,7 @@
             </a> |
             <a href="https://www.linkedin.com/in/ali-yousof-876056234/" target="_blank" style="color: #ff7c7c; text-decoration: none; margin: 0 5px;">
                 <i class="fab fa-linkedin"></i> LinkedIn
-            </a> |
+            </a>|
             <a href="https://wa.me/+966557277941" target="_blank" style="color: #25D366; text-decoration: none; margin: 0 5px;">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
@@ -141,6 +124,7 @@
                 <i class="fas fa-envelope"></i> aydmkid@gmail.com
             </a>
         </p>
-    </footer>   
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
