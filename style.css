@@ -240,10 +240,6 @@ section h2:hover {
 
 
 
-
-
-
-
 footer {
     text-align: center;
     padding: 1.5rem 0;
@@ -315,5 +311,79 @@ img:hover::after {
     }
 }
 
+#visitor-count {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1f1c2c, #302b63, #24243e);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    margin: 2rem auto;
+    max-width: 400px;
+    animation: fadeIn 1.5s ease-in-out, glow 2s infinite alternate;
+    color: #f8fbff;
+    font-family: 'Arial', sans-serif;
+}
 
+#visitor-count h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f8fbff;
+    display: inline-block;
+    position: relative;
+    animation: textGlow 2s infinite alternate;
+}
+
+#visitor-count h2 i {
+    margin-right: 10px;
+    color: #ff6b6b;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+#visitor-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffe66d;
+    text-shadow: 0 0 10px #ffe66d, 0 0 20px #ffe66d;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Glow animation for the entire section */
+@keyframes glow {
+    0% {
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Text glow animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #6b8df2, 0 0 20px #6b8df2;
+    }
+    to {
+        text-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+    }
+}
+
+/* Pulse animation for visitor number */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Bounce animation for the icon */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
