@@ -1,19 +1,31 @@
-// Visitor count logic using localStorage
-const visitorKey = 'visitorCount'; // Key for localStorage
-let visitorCount = localStorage.getItem(visitorKey);
+const menu = document.getElementById("menu");
+const action = document.getElementById("action");
 
-// Initialize count if it doesn't exist
-if (!visitorCount) {
-    visitorCount = 1;
-} else {
-    visitorCount = parseInt(visitorCount) + 1;
+menu.addEventListener("click",() => {
+    hundleMenu();
+});
+
+function hundleMenu(){
+    menu.classList.toggle("is-active");
+    action.classList.toggle("is-active");
 }
 
-// Update localStorage with the new count
-localStorage.setItem(visitorKey, visitorCount);
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('nav ul li a');
 
-// Display the count
-document.getElementById('visitor-number').textContent = visitorCount;
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default link behavior
 
-// Optional: Log visit details in the console
-console.log(`Welcome! You are visitor number ${visitorCount}.`);
+            const targetId = this.getAttribute("href").substring(1); // Remove #
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60, // Adjust for fixed navbar
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
